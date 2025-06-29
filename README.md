@@ -90,6 +90,6 @@ http://localhost:8501
 ## 👤 Author
 
 Developed by Shruti Gupta 
-GitHub: [@Shruti-2004-ai([https://github.com/yourusername](https://github.com/Shruti-2004-ai/rice-desktop-app))
+GitHub: [@Shruti-2004-ai(https://github.com/Shruti-2004-ai/rice-desktop-app))
 
 ---
