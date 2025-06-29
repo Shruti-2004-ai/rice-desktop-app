@@ -1,29 +1,30 @@
 @echo off
-REM -----------------------------------------------------------
-REM rice_app → standalone EXE
-REM -----------------------------------------------------------
-set "PYINSTALL=pyinstaller"
+setlocal
+
+REM -------- user‑editable variables --------
 set "MAIN=rice_app.py"
 set "MODEL=rice_type_classifier.h5"
-set "ASSETS=samplecrop (1).jpg"
+set "ASSET=samplecrop (1).jpeg"
+REM -----------------------------------------
 
-echo.
-echo == Installing PyInstaller if missing...
 pip show pyinstaller >nul || pip install pyinstaller
+if %errorlevel% neq 0 (
+  echo PyInstaller install failed
+  pause
+  exit /b 1
+)
 
-echo.
-echo == Building one‑file executable...
-%PYINSTALL% --clean --noconfirm --onefile ^
+echo Building %MAIN% …
+pyinstaller --clean --noconfirm --onefile ^
   --add-data "%MODEL%;." ^
-  --add-data "%ASSETS%;." ^
-  --hidden-import="numpy" ^
-  --hidden-import="pillow" ^
-  --hidden-import="streamlit" ^
-  --hidden-import="tensorflow" ^
-  --icon=NONE ^
-  %MAIN%
+  --add-data "%ASSET%;." ^
+  "%MAIN%"
+if %errorlevel% neq 0 (
+  echo Build failed.  See messages above.
+  pause
+  exit /b 1
+)
 
-echo.
-echo == Build finished!
-echo   Find rice_app.exe inside the "dist" folder.
+echo Done!  Look inside dist\
 pause
+endlocal
