@@ -89,11 +89,7 @@ http://localhost:8501
 
 ## 👤 Author
 
-Developed by [Your Name]  
-GitHub: [@yourusername](https://github.com/yourusername)
+Developed by Shruti Gupta 
+GitHub: [@Shruti-2004-ai([https://github.com/yourusername](https://github.com/Shruti-2004-ai/rice-desktop-app))
 
 ---
-
-## 📄 License
-
-MIT License or similar (choose what fits your use case)
